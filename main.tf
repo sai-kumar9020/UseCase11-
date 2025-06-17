@@ -1,8 +1,8 @@
-resource "aws_instance" "usecase11" {
+resource "aws_instance" "nginx_server" {
   ami             = var.ami_id
   instance_type   = var.instance_type
   security_groups = [aws_security_group.ec2_sg.id]
-  key_name        =  var.key_name # Allow SSH access
+  key_name        =  var.key_name
 
   tags = { Name = "UseCase-11" }
 
