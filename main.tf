@@ -1,4 +1,4 @@
-resource "aws_security_group" "ec2_sg" {
+resource "aws_security_group" "web_sg" {
   vpc_id = var.vpc_id
   ingress {
     description = "Allow SSH"
@@ -23,14 +23,14 @@ resource "aws_security_group" "ec2_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = { Name = "EC2-SG" }
+  tags = { Name = "WEB-SG" }
 }
 
 
 resource "aws_instance" "nginx_server" {
   ami             = var.ami_id
   instance_type   = var.instance_type
-  security_groups = [aws_security_group.ec2_sg.id]
+  security_groups = [aws_security_group.web_sg.id]
   key_name        =  var.key_name
 
   tags = { Name = "UseCase-11" }
