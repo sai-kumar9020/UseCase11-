@@ -23,7 +23,7 @@ variable "ami_id" {
 }
 
 variable "vpc_id"{
-    description = "vpc id"
-    type = string
-    default = "vpc-0526ac238210e4180"
+  description = "vpc id"
+  type = string
+  default = "vpc-0526ac238210e4180"
 }
