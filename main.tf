@@ -14,7 +14,7 @@ resource "aws_security_group" "web_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] 
+
   }
 
   egress {
@@ -28,6 +28,7 @@ resource "aws_security_group" "web_sg" {
     Name = "web-server-sg"
   }
 }
+
 
 resource "aws_instance" "web_server" {
   ami             = var.ami_id
